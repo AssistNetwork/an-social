@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.summary     = 'Backend Service and API for Assist Network.'
   gem.homepage    = 'https://github.com/AssistNetwork'
 
-  gem.name        = 'sample'
+  gem.name        = 'an-auth'
   gem.version     = '0.0.1'
   gem.require_paths = ['lib']
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sample (0.0.1)
+    an-auth (0.0.1)
       cutest
       grape
       json
@@ -135,7 +135,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sample!
+  an-auth!
 
 BUNDLED WITH
    1.10.6

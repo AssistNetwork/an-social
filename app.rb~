@@ -26,8 +26,7 @@ class App < Grape::API
   end
 
   get '/auth/:provider/callback' do
-    render (:content, {"<h1>#{params[:provider]}</h1>
-         <pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
+    render (:content, {"<h1>#{params[:provider]}</h1><pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
   end
 
   get '/auth/failure' do
@@ -35,13 +34,12 @@ class App < Grape::API
   end
 
   get '/auth/:provider/deauthorized' do
-    render {"#{params[:provider]} has deauthorized this app."}
+    render (:logout, {"#{params[:provider]} has deauthorized this app."})
   end
 
   get '/protected' do
     throw(:halt, [401, "Not authorized\n"]) unless session[:authenticated]
-    render {"<pre>#{request.env['omniauth.auth'].to_json}</pre><hr>
-         <a href='/logout'>Logout</a>"}
+    render (:protected, {"<pre>#{request.env['omniauth.auth'].to_json}</pre><hr><a href='/logout'>Logout</a>"})
   end
 
   get '/logout' do
