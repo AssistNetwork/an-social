@@ -17,7 +17,12 @@ class App < Grape::API
 
   helpers do
     def render(temp, &block )
-      Slim::Template.new("./views/#{temp}.slim").render(self, block.call)
+      unless block.nil?
+        Slim::Template.new("./views/#{temp}.slim").render(self, block.call)
+      else
+        Slim::Template.new("./views/#{temp}.slim").render(self)
+      end
+
     end
   end
 
