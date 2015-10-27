@@ -4,7 +4,7 @@ html
     title Authentication helper application
   body
     h1
-      {params[:provider]}
+      - params[:provider]}
       pre
-        {JSON.pretty_generate(request.env['omniauth.auth'])}
+        - JSON.pretty_generate(request.env['omniauth.auth'])}
         
