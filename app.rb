@@ -32,10 +32,12 @@ class App < Grape::API
 
   get '/auth/:provider/callback' do
   #  render (:content, {"<h1>#{params[:provider]}</h1><pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
+    render :callback
   end
 
   get '/auth/failure' do
  #   render (:error, {"<h1>Authentication Failed:</h1><h3>message:<h3> <pre>#{params}</pre>"})
+    render :error
   end
 
   get '/auth/:provider/deauthorized' do

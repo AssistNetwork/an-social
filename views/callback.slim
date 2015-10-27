@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Authentication helper application
+  body
+    h1
+      {params[:provider]}
+      pre
+        {JSON.pretty_generate(request.env['omniauth.auth'])}
+        
