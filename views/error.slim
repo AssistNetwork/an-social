@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Authentication error
+  body
+    h1
+      - :error
+      pre
+        - JSON.pretty_generate(request.env['omniauth.error'])
