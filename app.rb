@@ -27,7 +27,7 @@ class App < Grape::API
 
  get '/auth/:provider/callback' do
   #  render (:content, {"<h1>#{params[:provider]}</h1><pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
-    content_type :txt,'text/plain'
+  #  content_type :txt,'text/plain'
     request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
     render :callback
     #render :callback unless request.env['omniauth.auth'].nil?
