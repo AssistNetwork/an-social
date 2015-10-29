@@ -6,4 +6,4 @@ html
     h1
       - :error
       pre
-        - JSON.pretty_generate(request.env['omniauth.error'])
+        - request.env['omniauth.error']

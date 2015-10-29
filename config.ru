@@ -18,22 +18,3 @@ end
 
 require 'app'
 run App
-
-=begin
-github
-Client ID
-    605c832bd4eb93eb3c2a
-Client Secret
-    5f160ead52af923368fafb2a063a1cfaaeed96b2
-
-facebook
-App ID
-1516715661975491
-App Secret
-a2ceff17b400bb24b8b9d3a12595c868
-
-twitter
- Consumer Key (API Key) JucYMj3W8m49UZ6TerlaqNiP2
-Consumer Secret (API Secret) F2YW82EEgKkeXg6OGJYe0JXDfZR4cgEopgl4ApW9VLfwHIm0Kz
-
-=end
