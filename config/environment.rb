@@ -1,3 +1,3 @@
 ENV['RACK_ENV'] ||= 'development'
 
-Application::name = 'my-first-app'
+Application::name = 'an-auth'
