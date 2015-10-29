@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4758b783-a2d7-4e60-a7ad-cec985e14c3b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="an-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +30,10 @@
       <file leaf-file-name="app.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3538961">
-              <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.48863637">
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
-                <element signature="e#292#511#1" expanded="true" />
+                <element signature="e#210#429#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -487,7 +486,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#292#511#1" expanded="true" />
+            <element signature="e#210#429#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,7 +569,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#292#511#1" expanded="true" />
+            <element signature="e#210#429#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,7 +635,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#292#511#1" expanded="true" />
+            <element signature="e#210#429#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,10 +791,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3538961">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.48863637">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
-            <element signature="e#292#511#1" expanded="true" />
+            <element signature="e#210#429#1" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,11 +7,6 @@ require 'slim'
 
 class App < Grape::API
 
-#  configure do
-#    set :sessions, true
-#    set :inline_templates, true
-#  end
-
 #  default_format :txt
   content_type :html, 'text/html; charset=utf-8'
 
@@ -30,9 +25,12 @@ class App < Grape::API
     render :index
   end
 
- post '/auth/:provider/callback' do
+ get '/auth/:provider/callback' do
   #  render (:content, {"<h1>#{params[:provider]}</h1><pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
-    render :callback unless request.env['omniauth.auth'].nil?
+    content_type :txt,'text/plain'
+    request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
+    render :callback
+    #render :callback unless request.env['omniauth.auth'].nil?
     p request.env['omniauth.auth'].to_yaml.to_s
   end
 
