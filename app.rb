@@ -30,7 +30,7 @@ class App < Grape::API
     render :index
   end
 
-  get '/auth/:provider/callback' do
+ post '/auth/:provider/callback' do
   #  render (:content, {"<h1>#{params[:provider]}</h1><pre>#{JSON.pretty_generate(request.env['omniauth.auth'])}</pre>"})
     render :callback unless request.env['omniauth.auth'].nil?
     p request.env['omniauth.auth'].to_yaml.to_s
