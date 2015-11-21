@@ -29,6 +29,7 @@ class App < Grape::API
     request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
     render :callback
     #render :callback unless request.env['omniauth.auth'].nil?
+    # TODO GRANTEDBY.ME!!!
     p request.env['omniauth.auth'].to_yaml.to_s
   end
 

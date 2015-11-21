@@ -3,6 +3,7 @@
 *.rbc
 /.config
 /coverage/
+/.idea/
 /InstalledFiles
 /pkg/
 /spec/reports/
