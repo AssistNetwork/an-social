@@ -3,11 +3,13 @@
 # author: Andras Csizmadia <andras@grantedby.me>
 #
 
+require 'net/https'
+
 class GrantedByMe
 
   VERSION = '1.0.9'
   BRANCH = 'master'
-  HOST = 'https://api.grantedby.me/api//'
+  HOST = 'https://api.grantedby.me/api/'
 
   ##
   # Constructor
@@ -16,6 +18,7 @@ class GrantedByMe
     @crypto = Crypto.new
     @server_key = server_key
     @private_key = private_key
+    @public_key = get_public_key
     @api_url = HOST
     if server_key
       @public_hash = Crypto.digest(server_key)
@@ -61,11 +64,13 @@ class GrantedByMe
     params['public_key'] = public_key
     params['timestamp'] = Time.now.to_i
     uri = URI(@api_url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' => 'application/json'})
-    request.body = params.to_json
-    response = http.request(request)
-    return JSON.parse(response.body)
+
+    Net::HTTP.start(uri.host, uri.port,:use_ssl => uri.scheme == 'https') do |http|
+      request = Net::HTTP::Post.new uri, initheader = {'Content-Type' => 'application/json'}
+      request.body = params.to_json
+      @response = http.request(request)
+    end
+    return JSON.parse(@response.body)
     rescue => e
       puts "failed: #{e}"
       return nil
@@ -80,7 +85,7 @@ class GrantedByMe
       @private_key = key.to_pem
     end
     if @server_key == nil
-      handshake = activate_handshake(key.public_key.to_pem)
+      handshake = activate_handshake(@public_key)
       if handshake && handshake['success'] && handshake['public_key']
         @server_key = handshake['public_key']
         @public_hash = Crypto.digest(@server_key)
@@ -178,14 +183,16 @@ class GrantedByMe
   #
   def post(params)
     uri = URI(@api_url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' => 'application/json', 'User-Agent' => 'GrantedByMe/0.0.1-local (Ruby)'})
-    encrypted_params = @crypto.encrypt(params, @private_key, @server_key)
-    encrypted_params['public_hash'] = @public_hash
-    request.body = encrypted_params.to_json
-    response = http.request(request)
-    result = JSON.parse(response.body)
-    return @crypto.decrypt(result, @private_key, @server_key)
+    Net::HTTP.start(uri.host, uri.port,:use_ssl => uri.scheme == 'https') do |http|
+      request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' => 'application/json', 'User-Agent' => 'GrantedByMe/0.0.1-local (Ruby)'})
+      encrypted_params = @crypto.encrypt(params, @private_key, @server_key)
+      encrypted_params['public_hash'] = @public_hash
+      request.body = encrypted_params.to_json
+      @response = http.request(request)
+    end
+    crypted_result = JSON.parse(@response.body)
+    result = @crypto.decrypt(crypted_result, @private_key, @server_key)
+    return result
     rescue => e
       puts "failed: #{e}"
       return '{"success": false}'
@@ -193,9 +200,9 @@ class GrantedByMe
 
 end
 
-require 'date'
+#require 'date'
 require 'json'
-require 'net/http'
+#require 'net/http'
 require 'grantedbyme/crypto'
 require 'openssl'
-require 'base64'
+#require 'base64'

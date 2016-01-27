@@ -3,7 +3,7 @@ Gem::Specification.new do |gem|
 
   gem.authors     = ['Gabor Nagymajtenyi']
   gem.email       = ['gabor.nagymajtenyi@gmail.com']
-  gem.description = 'Assist Network Backend Service'
+  gem.description = 'Assist Network Auth Service'
   gem.summary     = 'Backend Service and API for Assist Network.'
   gem.homepage    = 'https://github.com/AssistNetwork'
 
@@ -30,6 +30,11 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth-github'
   gem.add_dependency 'omniauth-facebook'
   gem.add_dependency 'omniauth-twitter'
+  gem.add_dependency 'omniauth-google-oauth2'
+#  gem.add_dependency 'date'
+#  gem.add_dependency 'net/http'
+#  gem.add_dependency 'openssl'
+#  gem.add_dependency 'base64'
   gem.add_dependency 'ohm'
   gem.add_dependency 'ohm-contrib'
   gem.add_dependency 'cutest'

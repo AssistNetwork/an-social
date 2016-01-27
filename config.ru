@@ -5,6 +5,7 @@ require 'omniauth'
 require 'omniauth-github'
 require 'omniauth-facebook'
 require 'omniauth-twitter'
+require 'omniauth-google-oauth2'
 
 use Rack::Session::Cookie, secret: 'huspvhsfdvdfvie324r2miw6y46etettooiorertrrehrye'
 
