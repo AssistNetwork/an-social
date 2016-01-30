@@ -3,25 +3,25 @@ Gem::Specification.new do |gem|
 
   gem.authors     = ['Gabor Nagymajtenyi']
   gem.email       = ['gabor.nagymajtenyi@gmail.com']
-  gem.description = 'Assist Network Auth Service'
-  gem.summary     = 'Backend Service and API for Assist Network.'
+  gem.description = 'Assist Network Social Service'
+  gem.summary     = 'Social Service and API for Assist Network.'
   gem.homepage    = 'https://github.com/AssistNetwork'
 
-  gem.name        = 'an-auth'
+  gem.name        = 'an-social'
   gem.version     = '0.0.1'
   gem.require_paths = ['lib']
 
   # Ruby
-  gem.required_ruby_version = '>= 2.2.0'
-  gem.required_rubygems_version = '>= 2.2.0'
+  gem.required_ruby_version = '>= 2.2.3'
+  gem.required_rubygems_version = '>= 2.2.3'
+
 
   # Dependencies
 
   gem.add_dependency 'rake'
   gem.add_dependency 'puma'
-#  gem.add_dependency 'grape'
-#  gem.add_dependency 'rack-cors'
-#  gem.add_dependency 'sinatra'
+  gem.add_dependency 'grape'
+  gem.add_dependency 'rack-cors'
   gem.add_dependency 'grape'
   gem.add_dependency 'json'
   gem.add_dependency 'omniauth'
@@ -31,10 +31,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth-facebook'
   gem.add_dependency 'omniauth-twitter'
   gem.add_dependency 'omniauth-google-oauth2'
-#  gem.add_dependency 'date'
-#  gem.add_dependency 'net/http'
-#  gem.add_dependency 'openssl'
-#  gem.add_dependency 'base64'
   gem.add_dependency 'ohm'
   gem.add_dependency 'ohm-contrib'
   gem.add_dependency 'cutest'
@@ -44,11 +40,14 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'slim'
   gem.add_dependency 'pry'
 
-# Files
-#  unless ENV['DYNO'] # check whether we're running on Heroku or not
-#    gem.files = `git ls-files`.split
-#    gem.test_files = Dir['test/**/*']
-#    gem.executables = Dir['bin/*'].map { |f| File.basename(f) }
-#  end
+  gem.add_dependency 'rack-contrib'
+  gem.add_dependency 'redis-namespace'
+
+  # Files
+  unless ENV['DYNO'] # check whether we're running on Heroku or not
+    gem.files = `git ls-files`.split
+    gem.test_files = Dir['test/**/*']
+    gem.executables = Dir['bin/*'].map { |f| File.basename(f) }
+  end
 
 end

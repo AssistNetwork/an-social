@@ -1,0 +1,24 @@
+*0.0.7*
+
+* Added handling of access_token as query parameter in Auth::Middleware
+* Add option for allowing unauthenticated access in Auth::Middleware
+* Uses SecureRandom when possible
+
+*0.0.6*
+
+* Added a Rack middleware
+
+*0.0.4*
+
+* Fixed some problems related to exception handling
+* Fixed a bug in the validation of redirect_uri
+* Removed the possibility to run the server stand-alone
+
+*0.0.3*
+
+* Added json gem dependency
+* Added a more flexible sentry system
+
+*0.0.1*
+
+* First public release

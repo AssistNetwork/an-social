@@ -5,7 +5,7 @@ require 'json'
 
 require 'slim'
 
-class App < Grape::API
+class Api < Grape::API
 
 #  default_format :txt
   content_type :html, 'text/html; charset=utf-8'

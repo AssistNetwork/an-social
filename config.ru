@@ -22,5 +22,5 @@ use OmniAuth::Builder do
 end
 
 
-require 'app'
-run App
+require_relative 'app/api/api'
+run Api
